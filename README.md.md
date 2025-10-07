@@ -1,35 +1,4 @@
-<!-- 🌊 CABEÇALHO VISUAL DO PROJETO -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0056D2,100:13ADC7&height=220&section=header&text=🚀%20Projeto%20de%20Testes%20Automatizados%20PGATS%20#3&fontSize=34&fontColor=fff&fontAlignY=40&desc=Mentoria%20Julio%20de%20Lima%202.0%20·%20Desafio%20#3&descAlignY=55&descAlign=50&animation=fadeIn" />
-</p>
 
-<h2 align="center">🧠 Desafio #3 — Testando um Produto de Mercado com IA Generativa</h2>
-
-<p align="center">
-  <b>👨‍💻 Autor:</b> Jefferson Paulo de Aguiar Barbosa <br/>
-  <b>🎓 Mentoria:</b> Julio de Lima 2.0 · <b>🧩 Stack:</b> Mocha · Chai · SuperTest · JWT · Mochawesome
-</p>
-
-<p align="center">
-  <a href="https://github.com/jeff-barbosa123/pgats-02-api/stargazers">
-    <img src="https://img.shields.io/github/stars/jeff-barbosa123/pgats-02-api?color=FFD700&style=for-the-badge" />
-  </a>
-  <a href="https://github.com/jeff-barbosa123/pgats-02-api/network/members">
-    <img src="https://img.shields.io/github/forks/jeff-barbosa123/pgats-02-api?color=00BFFF&style=for-the-badge" />
-  </a>
-  <a href="https://github.com/jeff-barbosa123/pgats-02-api/commits/main">
-    <img src="https://img.shields.io/github/last-commit/jeff-barbosa123/pgats-02-api?color=32CD32&style=for-the-badge" />
-  </a>
-  <a href="https://github.com/jeff-barbosa123/pgats-02-api/issues">
-    <img src="https://img.shields.io/github/issues/jeff-barbosa123/pgats-02-api?color=FF6347&style=for-the-badge" />
-  </a>
-</p>
-
----
-
-<p align="center">
-  <i>💬 “Automatizar é transformar qualidade em hábito. Cada teste é um passo rumo à excelência.”</i>
-</p>
 
 # 🧪 PGATS – Projeto de Automação de Testes de API com IA Generativa  
 > Projeto desenvolvido como parte do **Desafio #3 da Mentoria PGATS – Julio de Lima 2.0**, aplicando automação de testes de APIs REST com Mocha, Chai, SuperTest e apoio de IA Generativa.
