@@ -12,8 +12,15 @@ export const options = {
  // iterations: 60, // define quantas vezes o teste será executado
  // e os  vus:11000,
  //durations: '60s', serve para adiciar usuarios virtuais 
- vus:11000,
- durations: '60s',
+ //vus:11000,
+ //durations: '60s',
+  //estagios seguir uma determinada definida 
+ stages:[
+  {duration: '5s',target:10},
+  {duration: '20s',target:10},
+  {duration: '5s',target:0}
+
+ ],
   thresholds:{
      http_req_duration:['p(90)<3000','max<5000'],
       http_req_failed:['rate<0.01']
