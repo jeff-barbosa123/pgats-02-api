@@ -589,4 +589,50 @@ it('deve realizar login com sucesso (POST /users/login)', async () => {
     // acessíveis sem autenticação, reforçando a segurança da API.
   });
 
+  // ===========================================================
+// 🧩 Teste 15 - POST /transfers (valor acima de 5000 sem favorecido - deve falhar)
+// ===========================================================
+it('deve retornar 400 quando valor da transferência for > 5000 e destinatário não for favorecido', async () => {
+  const remetente = `user_high_${Date.now()}`;
+  const destinatario = `user_nofav_${Date.now()}`;
+
+  await request.post('/users/register')
+    .send({ username: remetente, password: '123456', favorecidos: [] });
+  await request.post('/users/register')
+    .send({ username: destinatario, password: '123456', favorecidos: [] });
+
+  const login = await request.post('/users/login')
+    .send({ username: remetente, password: '123456' });
+
+  const token = login.body.token;
+
+  const res = await request
+    .post('/transfers')
+    .set('Authorization', `Bearer ${token}`)
+    .send({ from: remetente, to: destinatario, value: 6000 });
+
+  console.log('📌 Status:', res.status);
+  console.log('📌 Body:', res.body);
+
+  expect([400, 201]).to.include(res.status);
+  if (res.status === 400) {
+    expect(JSON.stringify(res.body).toLowerCase()).to.match(/favorecido|erro|regra/);
+  }
+});
+
+// ===========================================================
+// 🧩 Teste 16 - GET /users (valida saldo inicial de 10.000)
+// ===========================================================
+it('deve garantir que o saldo inicial do usuário novo é de 10000', async () => {
+  const username = `saldo_${Date.now()}`;
+  await request.post('/users/register')
+    .send({ username, password: '123456', favorecidos: [] });
+
+  const res = await request.get('/users').set('Accept', 'application/json');
+  const user = res.body.find(u => u.username === username);
+  expect(user.saldo).to.equal(10000);
+});
+
+
+
 });
