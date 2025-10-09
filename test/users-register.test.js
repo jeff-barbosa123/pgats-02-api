@@ -9,9 +9,13 @@ import { sleep, check } from 'k6';
 // ⚙️ Configurações do teste
 // =======================================================
 export const options = {
-  iterations: 60, // define quantas vezes o teste será executado
+ // iterations: 60, // define quantas vezes o teste será executado
+ // e os  vus:11000,
+ //durations: '60s', serve para adiciar usuarios virtuais 
+ vus:11000,
+ durations: '60s',
   thresholds:{
-     http_req_duration:['p(90)<40','max<20'],
+     http_req_duration:['p(90)<3000','max<5000'],
       http_req_failed:['rate<0.01']
     
   }
